@@ -7,6 +7,4 @@ https://hub.docker.com/repository/docker/fandi23/karsajobs/general
 
 
 GITHUB
-Karsajobs backend: https://github.com/fandi321/karsajobs
-karsajobs frontend: https://github.com/fandi321/karsajobs-ui
-kubernetes: https://github.com/fandi321/kubernetes
+https://github.com/fandi321/a433-microservices/tree/main/kubernetes
