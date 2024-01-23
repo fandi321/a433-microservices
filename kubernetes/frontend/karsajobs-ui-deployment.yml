@@ -1,0 +1,42 @@
+# Specify the API version
+apiVersion: apps/v1
+#  Specify type of the Kubernetes resource
+kind: Deployment
+# Define metadata for the Deployment resource
+metadata:
+  # Specify the name of the Deployment
+  name: app-frontend
+  # Specify key-value pairs that are used to identify and organize resources
+  labels:
+    app: frontend
+# Define the specification of the Deployment resource
+spec:
+  # Specify the number of replicas of the pods
+  replicas: 1
+  # Specify how the Deployment should select which pods to manage
+  selector:
+    # Select pods that have a label of app: frontend
+    matchLabels:
+      app: frontend
+  # Define the pod template that the Deployment will use to create replicas
+  template:
+    # Specify the labels that should be applied to the pod template
+    metadata:
+      labels:
+        app: frontend
+    spec:
+      # Define the container that will run in the pod
+      containers:
+          # specifies the Docker image that the container should use
+        - name: karsajobs-ui
+          # Specify the policy that the image will only be pulled if it's not already present on the node
+          image: fandi23/karsajobs-ui:latest
+          # Specify the ports that the container should listen on
+          imagePullPolicy: IfNotPresent
+          # Specify the ports that the container should listen on
+          ports:
+            - containerPort: 8000
+          # Define the environment variables that the container should use
+          env:
+            - name: VUE_APP_BACKEND
+              value: http://10.104.2.60:31119

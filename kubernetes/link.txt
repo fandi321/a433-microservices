@@ -1,0 +1,12 @@
+DOCKER
+fandi23/Karsajobs-ui:
+https://hub.docker.com/repository/docker/fandi23/karsajobs-ui/general
+
+fandi23/karsajobs:
+https://hub.docker.com/repository/docker/fandi23/karsajobs/general
+
+
+GITHUB
+Karsajobs backend: https://github.com/fandi321/karsajobs
+karsajobs frontend: https://github.com/fandi321/karsajobs-ui
+kubernetes: https://github.com/fandi321/kubernetes
