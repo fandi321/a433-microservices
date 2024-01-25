@@ -1,0 +1,2 @@
+shipping service: https://hub.docker.com/repository/docker/fandi23/shipping-service/general
+order service: https://hub.docker.com/repository/docker/fandi23/order-service/general
