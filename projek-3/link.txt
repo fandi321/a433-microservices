@@ -1,0 +1,2 @@
+image shipping-service: https://hub.docker.com/repository/docker/fandi23/shipping-service
+image order-service: https://hub.docker.com/repository/docker/fandi23/order-servicedock
