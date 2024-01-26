@@ -1,0 +1,30 @@
+version: '3'
+services:
+  order-service:
+    image: fandi23/order-service:latest
+    ports:
+      - "3000:3000"
+    depends_on:
+      - rabbitmq
+    environment:
+      AMQP_URL: "amqp://rabbitmq:5672"
+      RABBITMQ_QUEUE: "orders"
+
+  shipping-service:
+    image: fandi23/shipping-service:latest
+    ports:
+      - "3001:3001"
+    depends_on:
+      - rabbitmq
+    environment:
+      AMQP_URL: "amqp://rabbitmq:5672"
+      RABBITMQ_QUEUE: "orders"
+
+  rabbitmq:
+    image: "rabbitmq:3.11-management"
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    environment:
+      RABBITMQ_DEFAULT_USER: "guest"
+      RABBITMQ_DEFAULT_PASS: "guest"
